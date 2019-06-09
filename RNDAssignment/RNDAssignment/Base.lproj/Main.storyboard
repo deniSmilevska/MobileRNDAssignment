@@ -21,12 +21,35 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AoF-Lv-vpO">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                             </mapView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8WI-yg-bPd">
+                                <rect key="frame" x="16" y="804" width="382" height="42"/>
+                                <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="227-AJ-E11"/>
+                                    <constraint firstAttribute="height" constant="42" id="QS6-cM-9ge"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <state key="normal" title="Show Info">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="21"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="deY-ae-50g" kind="show" id="5LF-t0-v2e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Mtq-Wf-uo7" firstAttribute="bottom" secondItem="AoF-Lv-vpO" secondAttribute="bottom" id="5JO-vn-j8i"/>
+                            <constraint firstItem="Mtq-Wf-uo7" firstAttribute="trailing" secondItem="8WI-yg-bPd" secondAttribute="trailing" constant="16" id="6oE-Do-EIq"/>
+                            <constraint firstItem="Mtq-Wf-uo7" firstAttribute="bottom" secondItem="8WI-yg-bPd" secondAttribute="bottom" constant="16" id="Kh4-aT-EMg"/>
                             <constraint firstItem="AoF-Lv-vpO" firstAttribute="top" secondItem="Mtq-Wf-uo7" secondAttribute="top" id="Phn-PF-Hpn"/>
                             <constraint firstItem="AoF-Lv-vpO" firstAttribute="trailing" secondItem="Mtq-Wf-uo7" secondAttribute="trailing" id="VzL-8S-Izo"/>
+                            <constraint firstItem="8WI-yg-bPd" firstAttribute="leading" secondItem="Mtq-Wf-uo7" secondAttribute="leading" constant="16" id="XKS-Ug-HGJ"/>
                             <constraint firstItem="AoF-Lv-vpO" firstAttribute="leading" secondItem="Mtq-Wf-uo7" secondAttribute="leading" id="zK6-Dj-AJm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mtq-Wf-uo7"/>
@@ -151,6 +174,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QLi-bI-oli" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-834" y="-336"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="SzO-S1-WBN">
+            <objects>
+                <tableViewController id="deY-ae-50g" customClass="AboutViewController" customModule="RNDAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Rtu-m6-Fhv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="euY-Vq-nyd">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="euY-Vq-nyd" id="6Wk-in-aKE">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="deY-ae-50g" id="5dN-Mi-GfO"/>
+                            <outlet property="delegate" destination="deY-ae-50g" id="WdT-zm-lgY"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8nt-5S-S7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904" y="-12"/>
         </scene>
     </scenes>
 </document>

@@ -33,4 +33,11 @@ class MapsViewController: UIViewController, CitySelectedDelegate {
         
         mapView.setRegion(coordinateRegion, animated: true)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let controller = segue.destination as? AboutViewController {
+            let presenter = Presenter(view: controller, model: Model())
+            controller.presenter = presenter
+        }
+    }
 }
