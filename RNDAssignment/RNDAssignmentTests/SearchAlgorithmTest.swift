@@ -1,6 +1,6 @@
 //
 //  SearchAlgorithmTest.swift
-//  MobileRNDAssignmentTests
+//  RNDAssignmentTests
 //
 //  Created by Deni Smilevska on 6/9/19.
 //  Copyright © 2019 Deni Smilevska. All rights reserved.
