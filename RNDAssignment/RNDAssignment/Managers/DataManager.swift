@@ -12,6 +12,7 @@ class DataManager: NSObject {
     static let shared = DataManager()
     
     var allCities : [City] = [] // <- one array with all loaded cities sorted alphabetically so we dont have to load them again. Will just work with this array localy to get all the data from. We load this array only once, and we sort it only once.
+    var filteredList : [City] = [] // <- list that containts all the cities from the previous search.
     
     func loadCities(completion: @escaping() -> Void ) {
         if let path = Bundle.main.path(forResource: "cities", ofType: "json"){
@@ -36,14 +37,16 @@ class DataManager: NSObject {
         }
     }
     
-    func searchCitiesWithPrefix(prefix: String) -> [City]{ // cities are sorted
-        var filteredList : [City] = []
-        for city in self.allCities{ // look for all cities that start with the prefix entered in the search bar.
+    func searchCitiesWithPrefix(prefix: String, shouldLookInFilteredList: Bool) -> [City]{ // cities are sorted
+        let listToLookAt = shouldLookInFilteredList ? self.filteredList : self.allCities
+        var newFilteredList : [City] = []
+        for city in listToLookAt{ // look for all cities that start with the prefix entered in the search bar.
             if city.description.lowercased().starts(with: prefix.lowercased()) {
-                filteredList.append(city)
+                newFilteredList.append(city)
             }
         }
-        return filteredList
+        self.filteredList = newFilteredList
+        return newFilteredList
     }
 
 }

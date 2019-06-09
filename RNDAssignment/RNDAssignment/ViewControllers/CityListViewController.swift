@@ -17,6 +17,7 @@ class CityListViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var tableView: UITableView!
     var delegate: CitySelectedDelegate?
     var filteredList : [City] = []
+    var previousSearchedString = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,13 +30,15 @@ class CityListViewController: UIViewController, UISearchBarDelegate {
     
     //MARK: - Search functions
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        refreshFilteredList(prefix: searchText)
+        let shouldLookInFilteredList =  previousSearchedString != "" && searchText.count > previousSearchedString.count
+        refreshFilteredList(prefix: searchText, shouldLookInFilteredList: shouldLookInFilteredList)
         self.tableView.reloadData()
+        previousSearchedString = searchText
     }
     
     //MARK: - Helper functions
-    func refreshFilteredList(prefix: String){
-        filteredList = DataManager.shared.searchCitiesWithPrefix(prefix: prefix)
+    func refreshFilteredList(prefix: String , shouldLookInFilteredList: Bool){
+        filteredList = DataManager.shared.searchCitiesWithPrefix(prefix: prefix, shouldLookInFilteredList: shouldLookInFilteredList)
     }
 }
 
