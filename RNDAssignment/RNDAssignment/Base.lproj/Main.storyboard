@@ -10,16 +10,30 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Maps View Controller-->
         <scene sceneID="WJT-55-ypI">
             <objects>
-                <viewController id="fPv-6N-GaR" sceneMemberID="viewController">
+                <viewController id="fPv-6N-GaR" customClass="MapsViewController" customModule="RNDAssignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cSQ-Gi-D75">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="AoF-Lv-vpO">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Mtq-Wf-uo7" firstAttribute="bottom" secondItem="AoF-Lv-vpO" secondAttribute="bottom" id="5JO-vn-j8i"/>
+                            <constraint firstItem="AoF-Lv-vpO" firstAttribute="top" secondItem="Mtq-Wf-uo7" secondAttribute="top" id="Phn-PF-Hpn"/>
+                            <constraint firstItem="AoF-Lv-vpO" firstAttribute="trailing" secondItem="Mtq-Wf-uo7" secondAttribute="trailing" id="VzL-8S-Izo"/>
+                            <constraint firstItem="AoF-Lv-vpO" firstAttribute="leading" secondItem="Mtq-Wf-uo7" secondAttribute="leading" id="zK6-Dj-AJm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Mtq-Wf-uo7"/>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="AoF-Lv-vpO" id="bVF-3G-cVh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8nO-tM-hog" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

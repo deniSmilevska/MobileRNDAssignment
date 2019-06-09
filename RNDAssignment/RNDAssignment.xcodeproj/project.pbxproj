@@ -17,6 +17,7 @@
 		3BF8E01C22AD68E500B881AD /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8E01B22AD68E500B881AD /* City.swift */; };
 		3BF8E01E22AD690000B881AD /* limitedCities.json in Resources */ = {isa = PBXBuildFile; fileRef = 3BF8E01D22AD690000B881AD /* limitedCities.json */; };
 		3BF8E02122AD697100B881AD /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8E02022AD697100B881AD /* CityTableViewCell.swift */; };
+		3BF8E02322AD6A7000B881AD /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8E02222AD6A7000B881AD /* MapsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		3BF8E01B22AD68E500B881AD /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		3BF8E01D22AD690000B881AD /* limitedCities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = limitedCities.json; sourceTree = "<group>"; };
 		3BF8E02022AD697100B881AD /* CityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
+		3BF8E02222AD6A7000B881AD /* MapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 		3BF8E01622AD678F00B881AD /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				3BF8E02222AD6A7000B881AD /* MapsViewController.swift */,
 				3BF8E01722AD67BE00B881AD /* CityListViewController.swift */,
 			);
 			path = ViewControllers;
@@ -298,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BF8E02322AD6A7000B881AD /* MapsViewController.swift in Sources */,
 				3BF8DFE922AD5F6E00B881AD /* AppDelegate.swift in Sources */,
 				3BF8E01822AD67BE00B881AD /* CityListViewController.swift in Sources */,
 				3BF8E02122AD697100B881AD /* CityTableViewCell.swift in Sources */,
