@@ -51,7 +51,7 @@ class CityListViewController: UIViewController, UISearchBarDelegate {
         self.filteredList.removeAll()
         //have a filter list so we can work with that one instead of loading the whole cityList json file again.
         for city in self.cityList{ // cities are sorted so we dont have to sort them again after adding them to the filter list
-            if city.description.starts(with: prefix) {
+            if city.description.lowercased().starts(with: prefix.lowercased()) {
                 self.filteredList.append(city)
             }
         }
