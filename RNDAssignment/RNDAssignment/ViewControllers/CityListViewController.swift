@@ -8,10 +8,16 @@
 
 import UIKit
 
+protocol CitySelectedDelegate{
+    func citySelected(city: City)
+}
+
 class CityListViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     var cityList: [City] = []
+    var delegate: CitySelectedDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -48,5 +54,15 @@ extension CityListViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DispatchQueue.main.async {
+            let city = self.cityList[indexPath.row]
+            self.delegate?.citySelected(city: city)
+            if let mapsController = self.delegate as? MapsViewController{
+                self.splitViewController?.showDetailViewController(mapsController, sender: nil)
+            }
+        }
+        
     }
 }

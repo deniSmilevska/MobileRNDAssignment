@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MapsViewController: UIViewController {
+class MapsViewController: UIViewController, CitySelectedDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -17,5 +17,20 @@ class MapsViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+    }
+    
+    //MARK: - CitySelectedProtocol func
+    
+    func citySelected(city: City) {
+        let location = CLLocation(latitude: city.coord.lat, longitude: city.coord.lon)
+        self.centerMapOnLocation(location: location)
+    }
+    
+    //MARK: - Map fucntions
+    func centerMapOnLocation(location: CLLocation) {
+        let regionRadius : CLLocationDistance = 10000
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        
+        mapView.setRegion(coordinateRegion, animated: true)
     }
 }
