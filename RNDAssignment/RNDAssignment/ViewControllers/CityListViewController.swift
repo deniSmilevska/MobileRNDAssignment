@@ -21,13 +21,16 @@ class CityListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let path = Bundle.main.path(forResource: "limitedCities", ofType: "json"){
+        if let path = Bundle.main.path(forResource: "cities", ofType: "json"){
             do{
                 let data = try Data(contentsOf: URL(fileURLWithPath: path)
                     , options: .mappedIfSafe)
                 let decoder = JSONDecoder()
                 let jsonData = try decoder.decode([City].self, from: data)
                 cityList = jsonData
+                cityList.sort { (c1, c2) -> Bool in
+                    return c1 < c2
+                }
                 self.tableView.reloadData()
             }
             catch let error{

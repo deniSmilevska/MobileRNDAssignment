@@ -8,7 +8,7 @@
 
 import UIKit
 
-class City : Decodable {
+class City : Decodable, Comparable {
    
     var country: String = ""
     var name: String = ""
@@ -33,6 +33,16 @@ class City : Decodable {
         name = try values.decode(String.self, forKey: .name)
         _id = try values.decode(Int.self, forKey: ._id)
         coord = try values.decode(Coordinate.self, forKey: .coord)
+    }
+    
+    //MARK: - COMPARABLE FUNCS
+    static func < (lhs: City, rhs: City) -> Bool {
+        let result = lhs.description < rhs.description
+        return result
+    }
+    
+    static func == (lhs: City, rhs: City) -> Bool {
+        return lhs._id == rhs._id
     }
     
 }

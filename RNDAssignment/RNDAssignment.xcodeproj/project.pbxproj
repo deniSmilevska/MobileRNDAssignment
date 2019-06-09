@@ -18,6 +18,7 @@
 		3BF8E01E22AD690000B881AD /* limitedCities.json in Resources */ = {isa = PBXBuildFile; fileRef = 3BF8E01D22AD690000B881AD /* limitedCities.json */; };
 		3BF8E02122AD697100B881AD /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8E02022AD697100B881AD /* CityTableViewCell.swift */; };
 		3BF8E02322AD6A7000B881AD /* MapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8E02222AD6A7000B881AD /* MapsViewController.swift */; };
+		3BF8E02522AD6C5300B881AD /* cities.json in Resources */ = {isa = PBXBuildFile; fileRef = 3BF8E02422AD6C5300B881AD /* cities.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		3BF8E01D22AD690000B881AD /* limitedCities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = limitedCities.json; sourceTree = "<group>"; };
 		3BF8E02022AD697100B881AD /* CityTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		3BF8E02222AD6A7000B881AD /* MapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapsViewController.swift; sourceTree = "<group>"; };
+		3BF8E02422AD6C5300B881AD /* cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cities.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		3BF8E01922AD68A700B881AD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3BF8E02422AD6C5300B881AD /* cities.json */,
 				3BF8E01D22AD690000B881AD /* limitedCities.json */,
 			);
 			path = Resources;
@@ -274,6 +277,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BF8DFF322AD5F6F00B881AD /* LaunchScreen.storyboard in Resources */,
+				3BF8E02522AD6C5300B881AD /* cities.json in Resources */,
 				3BF8DFF022AD5F6F00B881AD /* Assets.xcassets in Resources */,
 				3BF8DFEE22AD5F6E00B881AD /* Main.storyboard in Resources */,
 				3BF8E01E22AD690000B881AD /* limitedCities.json in Resources */,
