@@ -1,8 +1,8 @@
 //
 //  CityListViewController.swift
-//  RNDAssignment
+//  MobileRNDAssignment
 //
-//  Created by Deni Smilevska on 6/9/19.
+//  Created by Deni Smilevska on 6/8/19.
 //  Copyright © 2019 Deni Smilevska. All rights reserved.
 //
 
@@ -13,56 +13,33 @@ protocol CitySelectedDelegate{
 }
 
 class CityListViewController: UIViewController, UISearchBarDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
-    var cityList: [City] = []
-    var filteredList: [City] = []
     var delegate: CitySelectedDelegate?
+    var filteredList : [City] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let path = Bundle.main.path(forResource: "cities", ofType: "json"){
-            do{
-                let data = try Data(contentsOf: URL(fileURLWithPath: path)
-                    , options: .mappedIfSafe)
-                let decoder = JSONDecoder()
-                let jsonData = try decoder.decode([City].self, from: data)
-                cityList = jsonData
-                cityList.sort { (c1, c2) -> Bool in
-                    return c1 < c2
-                }
-                filteredList = cityList
-                self.tableView.reloadData()
-            }
-            catch let error{
-                print(error.localizedDescription)
-            }
+        DataManager.shared.loadCities { () in
+            self.filteredList = DataManager.shared.allCities // initialy filtered list will contain all cities sorted alphabetically .
+            self.tableView.reloadData()
         }
-        // Do any additional setup after loading the view.
     }
-    //MARK: - Search delegate
+    
+    //MARK: - Search functions
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         refreshFilteredList(prefix: searchText)
         self.tableView.reloadData()
     }
+    
     //MARK: - Helper functions
     func refreshFilteredList(prefix: String){
-        self.filteredList.removeAll()
-        //have a filter list so we can work with that one instead of loading the whole cityList json file again.
-        for city in self.cityList{ // cities are sorted so we dont have to sort them again after adding them to the filter list
-            if city.description.lowercased().starts(with: prefix.lowercased()) {
-                self.filteredList.append(city)
-            }
-        }
+        filteredList = DataManager.shared.searchCitiesWithPrefix(prefix: prefix)
     }
 }
 
 extension CityListViewController: UITableViewDelegate, UITableViewDataSource{
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.filteredList.count
-    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "CityTableViewCell", for: indexPath) as? CityTableViewCell{
             let city = self.filteredList[indexPath.row]
@@ -71,7 +48,9 @@ extension CityListViewController: UITableViewDelegate, UITableViewDataSource{
         }
         return UITableViewCell()
     }
-    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.filteredList.count
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
     }
@@ -83,6 +62,5 @@ extension CityListViewController: UITableViewDelegate, UITableViewDataSource{
                 self.splitViewController?.showDetailViewController(mapsController, sender: nil)
             }
         }
-        
     }
 }
