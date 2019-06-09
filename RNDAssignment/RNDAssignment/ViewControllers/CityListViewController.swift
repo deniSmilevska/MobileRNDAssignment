@@ -35,7 +35,15 @@ class CityListViewController: UIViewController, UISearchBarDelegate {
         self.tableView.reloadData()
         previousSearchedString = searchText
     }
-    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+    }
     //MARK: - Helper functions
     func refreshFilteredList(prefix: String , shouldLookInFilteredList: Bool){
         filteredList = DataManager.shared.searchCitiesWithPrefix(prefix: prefix, shouldLookInFilteredList: shouldLookInFilteredList)
