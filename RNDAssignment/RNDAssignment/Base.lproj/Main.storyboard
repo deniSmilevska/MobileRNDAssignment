@@ -69,6 +69,9 @@
                                     <constraint firstAttribute="height" constant="44" id="djQ-OC-du3"/>
                                 </constraints>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="y5x-ff-Mt6" id="gpS-NE-c7T"/>
+                                </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zN2-SS-f8Z">
                                 <rect key="frame" x="0.0" y="132" width="414" height="730"/>
