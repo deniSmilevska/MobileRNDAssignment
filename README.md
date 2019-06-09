@@ -1,5 +1,6 @@
 # MobileRNDAssignment
 
+* The project is XCode 9.3 compatible and is written in Swift5. 12.2 iOS Deployment Target. 
 * Downloading of all cities is done at once, by using JSON Decoder. 
 * Downloading and sorting the cities is done only once when opening the app. For all additional operations with the cities we are using the same previously downloaded and sorted array. 
 * A SplitView controller is used to show two different view controllers next to each other on landscape mode. 
