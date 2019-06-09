@@ -26,6 +26,7 @@
 		3BF8E03022AD6F7C00B881AD /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8E02B22AD6F7C00B881AD /* AboutViewController.swift */; };
 		3BF8E03222AD6F9700B881AD /* aboutInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = 3BF8E03122AD6F9700B881AD /* aboutInfo.json */; };
 		3BF8E03622AD710000B881AD /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8E03522AD710000B881AD /* DataManager.swift */; };
+		3BF8E03822AD72BA00B881AD /* SearchAlgorithmTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF8E03722AD72BA00B881AD /* SearchAlgorithmTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		3BF8E02B22AD6F7C00B881AD /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		3BF8E03122AD6F9700B881AD /* aboutInfo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = aboutInfo.json; sourceTree = "<group>"; };
 		3BF8E03522AD710000B881AD /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		3BF8E03722AD72BA00B881AD /* SearchAlgorithmTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchAlgorithmTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 		3BF8DFFC22AD5F6F00B881AD /* RNDAssignmentTests */ = {
 			isa = PBXGroup;
 			children = (
+				3BF8E03722AD72BA00B881AD /* SearchAlgorithmTest.swift */,
 				3BF8DFFD22AD5F6F00B881AD /* RNDAssignmentTests.swift */,
 				3BF8DFFF22AD5F6F00B881AD /* Info.plist */,
 			);
@@ -362,6 +365,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3BF8DFFE22AD5F6F00B881AD /* RNDAssignmentTests.swift in Sources */,
+				3BF8E03822AD72BA00B881AD /* SearchAlgorithmTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
